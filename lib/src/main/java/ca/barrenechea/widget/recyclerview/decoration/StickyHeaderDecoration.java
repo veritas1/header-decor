@@ -237,7 +237,7 @@ public class StickyHeaderDecoration extends RecyclerView.ItemDecoration {
 							// Top header should be pushed off screen by 'offset' amount
 
 							// Check if header can collapse
-							if (headerHeight > header.getMinimumHeight()) {
+							if (headerHeight > header.getMinimumHeight() && header.getMinimumHeight() != 0) {
 								int proposedHeight = headerHeight - Math.abs(offset);
 								int newHeight = Math.max(proposedHeight, header.getMinimumHeight());
 								setHeaderViewHeight(parent, header, newHeight);
