@@ -17,6 +17,7 @@
 package ca.barrenechea.stickyheaders.widget;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,6 +70,9 @@ public class StickyTestAdapter extends RecyclerView.Adapter<StickyTestAdapter.Vi
 
     @Override
     public void onBindHeaderViewHolder(HeaderHolder viewholder, int position) {
+	    if (getHeaderId(position) % 2 == 0) {
+		    viewholder.itemView.setBackgroundColor(Color.RED);
+	    }
         viewholder.header.setText("Header " + getHeaderId(position));
     }
 
